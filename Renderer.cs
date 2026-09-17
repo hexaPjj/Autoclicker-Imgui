@@ -67,7 +67,6 @@ namespace imgui_autooclicker
                 ShowWindow(handle, SW_HIDE);
             }
 
-            // Yeni bir thread başlat ve tıklamayı kontrol et
             clickThread = new Thread(AutoClickLoop);
             clickThread.IsBackground = true;
             clickThread.Start();
@@ -97,7 +96,7 @@ namespace imgui_autooclicker
                     double clickInterval = 1000.0 / cpslidervalue;
                     while (stopwatch.Elapsed.TotalMilliseconds < clickInterval)
                     {
-                        await Task.Delay((int)0.3); // Daha hassas zamanlama
+                        await Task.Delay((int)0.3);
                     }
                 }
                 else
@@ -135,7 +134,7 @@ namespace imgui_autooclicker
                     double clickInterval = 1000.0 / rightcpsslidervalue;
                     while (stopwatch.Elapsed.TotalMilliseconds < clickInterval)
                     {
-                        await Task.Delay((int)0.3); // Daha hassas zamanlama
+                        await Task.Delay((int)0.3);
                     }
                 }
                 else
@@ -164,7 +163,7 @@ namespace imgui_autooclicker
 
 
             ReplaceFont("C:\\Windows\\Fonts\\arial.ttf", 15,FontGlyphRangeType.English);
-            ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.0f, 0.0f, 0.0f, 1.0f)); // Siyah renk
+            ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
 
             ImGui.Begin("SPLUS CLICKER");
             //ImGui.ShowStyleEditor();
